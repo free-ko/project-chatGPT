@@ -34,3 +34,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Yarn Integrity file
+.yarn-integrity
+.yarn
+
+# idea
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
