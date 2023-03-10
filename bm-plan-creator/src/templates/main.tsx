@@ -1,14 +1,9 @@
 import React from "react";
-import { Button, Input } from "~/degins";
+
+import { BmPlanCreator } from "~/features/bmPlanCreator";
 
 const Main = () => {
-  return (
-    <>
-      <h1>방가</h1>
-      <Input placeholder="하이" />
-      <Button type="submit" text="버튼" size="small" isBlock />
-    </>
-  );
+  return <BmPlanCreator />;
 };
 
 export default Main;
