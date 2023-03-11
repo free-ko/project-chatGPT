@@ -7,10 +7,8 @@ import type { BmPlanCreatorServiceForm } from "./bmPlanCreatorService.types";
 
 const { Configuration, OpenAIApi } = require("openai");
 
-const OPEN_API_KEY = "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";
-
 const configuration = new Configuration({
-  apiKey: OPEN_API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_OPEN_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
