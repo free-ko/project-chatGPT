@@ -1,4 +1,4 @@
-import { BrakePointTypes } from "./breackPoint";
+import type { BrakePointTypes } from "./breackPoint";
 
 const maxWidthQuery = (breakPoint: BrakePointTypes) =>
   `(max-width: ${breakPoint}px)`;
