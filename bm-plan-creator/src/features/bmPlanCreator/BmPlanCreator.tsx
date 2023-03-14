@@ -43,7 +43,7 @@ const BmPlanCreator = () => {
     }
 
     switch (requestModel) {
-      case "turbo":
+      case "turbo": {
         setReqTurboButtonIsLoading(true);
         const answerDataByTurbo = await getBMPlanByTurbo(data);
         setAnswerByTurbo(answerDataByTurbo);
@@ -51,7 +51,8 @@ const BmPlanCreator = () => {
         setReqTurboButtonText("재요청하기");
 
         break;
-      case "davinci":
+      }
+      case "davinci": {
         setReqDavinciButtonIsLoading(true);
         const answerDataByDavinci = await getBMPlanByDavinci(data);
         setAnswerByDavinci(answerDataByDavinci);
@@ -59,6 +60,7 @@ const BmPlanCreator = () => {
         setReqDavinciButtonText("재요청하기");
 
         break;
+      }
     }
   };
 
