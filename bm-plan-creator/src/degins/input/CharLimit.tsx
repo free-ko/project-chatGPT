@@ -3,7 +3,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-import { Color } from "~/degins";
+import { Color } from "~/degins/color";
 
 export type CharLimitProps = {
   noLabel: boolean;

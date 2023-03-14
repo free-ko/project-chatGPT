@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import type { SerializedStyles } from "@emotion/react";
 
-import { Color } from "~/degins";
+import { Color } from "~/degins/color";
 
 type ChildrenProps<Children = React.ReactNode> = {
   children?: Children;

@@ -1,6 +1,7 @@
 import React from "react";
 
-import { IconBox, Loading } from "~/degins";
+import { IconBox } from "~/degins/iconBox";
+import { Loading } from "~/degins/loading";
 
 import type { ButtonProps } from "./Button.types";
 import * as Styled from "./Button.styled";
