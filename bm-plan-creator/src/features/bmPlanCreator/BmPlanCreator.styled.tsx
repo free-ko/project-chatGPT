@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
-import { FontSize, FontWeight, Color } from "~/degins";
+import { Color } from "~/degins/color";
+import { FontSize, FontWeight } from "~/degins/font";
 
 export const FormWrapper = styled.form`
   display: flex;

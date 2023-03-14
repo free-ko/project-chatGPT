@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 
 import { ButtonWrapperProps } from "./Button.types";
 
-import { Color, FontSize, FontWeight } from "~/degins";
+import { Color } from "~/degins/color";
+import { FontWeight, FontSize } from "~/degins/font";
 
 const variantCSS = {
   primary: css`

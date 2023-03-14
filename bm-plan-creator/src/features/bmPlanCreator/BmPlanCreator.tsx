@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
-import { Button, Input } from "~/degins";
+import { Button } from "~/degins/button";
+import { Input } from "~/degins/input";
 import { GapUpDownBy } from "~/components";
 
 import { getBMPlanByDavinci, getBMPlanByTurbo } from "./bmPlanCreatorService";

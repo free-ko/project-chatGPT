@@ -1,7 +1,8 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-import { Color, IconBox } from "~/degins";
+import { Color } from "~/degins/color";
+import { IconBox } from "~/degins/iconBox";
 
 const inputSizeCSS = {
   large: `

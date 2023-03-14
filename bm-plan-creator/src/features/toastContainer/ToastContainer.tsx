@@ -4,13 +4,10 @@ import { Global, css } from "@emotion/react";
 import "react-toastify/dist/ReactToastify.min.css";
 import { ToastContainer as Wrapper, Slide } from "react-toastify";
 
-import {
-  Color,
-  FontSize,
-  BREAK_POINT,
-  IconClose,
-  IconCheckDeselected,
-} from "~/degins";
+import { Color } from "~/degins/color";
+import { FontSize } from "~/degins/font";
+import { BREAK_POINT } from "~/degins/mediaQuery";
+import { IconCheckDeselected, IconClose } from "~/degins/icon";
 
 const GlobalStyle = css`
   :root {
