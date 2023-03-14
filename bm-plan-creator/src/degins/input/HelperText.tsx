@@ -19,10 +19,10 @@ type ReactStandardProps = {
   as?: React.ElementType;
 };
 
-type Color = "light" | "dark" | "gray" | "error";
+type ColorType = "light" | "dark" | "gray" | "error";
 
 type HelperOptions = {
-  color?: Color;
+  color?: ColorType;
 };
 
 type HelperProps = ChildrenProps &
@@ -37,7 +37,7 @@ const HelperTextColor = {
   gray: Color.naturalGray7,
 };
 
-const HelperTextWrapper = styled.span<{ $color: Color }>`
+const HelperTextWrapper = styled.span<{ $color: ColorType }>`
   margin-top: 4px;
   margin-left: 16px;
   font-size: 12px;

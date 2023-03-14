@@ -1,5 +1,5 @@
 import React from "react";
-import { SerializedStyles } from "@emotion/react";
+import { SerializedStyles } from "~/types";
 import type { InputHTMLAttributes, FC, SVGProps } from "react";
 
 type ReactStandardProps = {
