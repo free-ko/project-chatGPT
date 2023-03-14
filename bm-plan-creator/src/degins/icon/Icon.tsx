@@ -69,6 +69,8 @@ const Icon = React.forwardRef<HTMLSpanElement, IconProps2>((props, ref) => {
   );
 });
 
+Icon.displayName = "Icon";
+
 // @ts-ignore
 Icon.elementType = "Icon";
 
@@ -101,6 +103,7 @@ const convertIcon = <TSize extends IconSizeAll>(
 
   // @ts-ignore
   InnerIcon.elementType = "Icon";
+  InnerIcon.displayName = "InnerIcon";
   return InnerIcon;
 };
 
