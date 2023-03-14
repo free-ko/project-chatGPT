@@ -6,15 +6,12 @@ import { Button } from "~/degins/button";
 import { Input } from "~/degins/input";
 import { GapUpDownBy } from "~/components";
 
-import { getBMPlanByDavinci, getBMPlanByTurbo } from "./bmPlanCreatorService";
+import { useBMPlanCreatorService } from "./bmPlanCreatorService";
 import type { BmPlanCreatorServiceForm } from "./bmPlanCreatorService.types";
 
 import * as Styled from "./BmPlanCreator.styled";
 
 const BmPlanCreator = () => {
-  const [answerByTurbo, setAnswerByTurbo] = useState("");
-  const [answerByDavinci, setAnswerByDavinci] = useState("");
-
   const [reqDavinciButtonText, setReqDavinciButtonText] = useState("요청하기");
   const [reqDavinciButtonIsLoading, setReqDavinciButtonIsLoading] =
     useState(false);
@@ -24,6 +21,15 @@ const BmPlanCreator = () => {
 
   const { register, handleSubmit, setValue } =
     useForm<BmPlanCreatorServiceForm>();
+
+  const {
+    answerByTurbo,
+    setAnswerByTurbo,
+    answerByDavinci,
+    setAnswerByDavinci,
+    getBMPlanByDavinci,
+    getBMPlanByTurbo,
+  } = useBMPlanCreatorService();
 
   const handleOnSubmit = async (
     data: BmPlanCreatorServiceForm

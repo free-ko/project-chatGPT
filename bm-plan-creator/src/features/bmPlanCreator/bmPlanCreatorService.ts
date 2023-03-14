@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   CreateCompletionRequest,
   CreateChatCompletionRequest,
@@ -39,54 +40,68 @@ const createPrompt = (data: BmPlanCreatorServiceForm) => {
     `;
 };
 
-export const getBMPlanByDavinci = async (
-  data: BmPlanCreatorServiceForm
-): Promise<string> => {
-  const completionParams: CreateCompletionRequest = {
-    model: "text-davinci-003",
-    max_tokens: 3500,
-    prompt: createPrompt(data),
+export const useBMPlanCreatorService = () => {
+  const [answerByTurbo, setAnswerByTurbo] = useState("");
+  const [answerByDavinci, setAnswerByDavinci] = useState("");
+
+  const getBMPlanByDavinci = async (
+    data: BmPlanCreatorServiceForm
+  ): Promise<string> => {
+    const completionParams: CreateCompletionRequest = {
+      model: "text-davinci-003",
+      max_tokens: 3500,
+      prompt: createPrompt(data),
+    };
+
+    try {
+      const response = await openai.createCompletion(completionParams);
+
+      return response.data.choices[0].text.trim();
+    } catch (error) {
+      console.error("에러가 발생 했습니다. = ", error);
+      return "에러가 발생했습니다.";
+    }
   };
 
-  try {
-    const response = await openai.createCompletion(completionParams);
-
-    return response.data.choices[0].text.trim();
-  } catch (error) {
-    console.error("에러가 발생 했습니다. = ", error);
-    return "에러가 발생했습니다.";
-  }
-};
-
-export const getBMPlanByTurbo = async (
-  data: BmPlanCreatorServiceForm
-): Promise<string> => {
-  const completionParams: CreateChatCompletionRequest = {
-    model: "gpt-3.5-turbo",
-    max_tokens: 3000,
-    messages: [
-      {
-        role: "system",
-        content: `
+  const getBMPlanByTurbo = async (
+    data: BmPlanCreatorServiceForm
+  ): Promise<string> => {
+    const completionParams: CreateChatCompletionRequest = {
+      model: "gpt-3.5-turbo",
+      max_tokens: 3000,
+      messages: [
+        {
+          role: "system",
+          content: `
         You are an expert in writing business plans well around the world.
         You're an expert at writing up a business plan very carefully.
         You writing up a business plan using figures and indicators well.
         `,
-      },
-      {
-        role: "user",
-        content: createPrompt(data),
-      },
-      { role: "assistant", content: "Q: " },
-    ],
+        },
+        {
+          role: "user",
+          content: createPrompt(data),
+        },
+        { role: "assistant", content: "Q: " },
+      ],
+    };
+
+    try {
+      const response = await openai.createChatCompletion(completionParams);
+
+      return response.data.choices[0].message.content;
+    } catch (error) {
+      console.error("에러가 발생 했습니다. = ", error);
+      return "에러가 발생했습니다.";
+    }
   };
 
-  try {
-    const response = await openai.createChatCompletion(completionParams);
-
-    return response.data.choices[0].message.content;
-  } catch (error) {
-    console.error("에러가 발생 했습니다. = ", error);
-    return "에러가 발생했습니다.";
-  }
+  return {
+    answerByTurbo,
+    setAnswerByTurbo,
+    answerByDavinci,
+    setAnswerByDavinci,
+    getBMPlanByDavinci,
+    getBMPlanByTurbo,
+  };
 };
