@@ -1,4 +1,4 @@
-import { SerializedStyles } from "@emotion/react";
+import { SerializedStyles } from "~/types";
 
 export type FontWeightKey =
   | "extraBold"
