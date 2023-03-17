@@ -1,3 +1,3 @@
-# Open AI를 가지고 다양한 기능 구현하는 곳 입니다.
+# 🤖 OpenAI를 통해 다양한 기능을 구현해보았습니다.
 
-1. [사업 계획서 작성 솔류션 기능](https://project-chat-gpt-git-deployment-v10x-free-ko.vercel.app/)
+1. [OpenAI가 추천하는 사업 계획서](https://gpt-bmplan-creator.vercel.app/)
